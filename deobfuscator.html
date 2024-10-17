@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSFuck Deobfuscator</title>
+</head>
+<body>
+    <h1>JSFuck Deobfuscator</h1>
+    <textarea id="input" rows="10" cols="100" placeholder="Paste JSFuck code here"></textarea>
+    <br>
+    <button onclick="deobfuscate()">Deobfuscate</button>
+    <pre id="output"></pre>
+
+    <script>
+        function deobfuscate() {
+            const input = document.getElementById('input').value;
+            try {
+                const decoded = new Function('return ' + input)();
+                document.getElementById('output').textContent = decoded;
+            } catch (e) {
+                document.getElementById('output').textContent = 'Error: ' + e.message;
+            }
+        }
+    </script>
+</body>
+</html>
