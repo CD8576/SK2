@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://raw.githubusercontent.com/zek-c/Securly-Kill-V111/main/IMG/insecurly%20icon.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>INSECURLY</title>
+    <style>
+        body {
+            background-color: black;
+            color: #eeeeee;
+            font-family: Arial;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        #error {
+            display: none;
+            color: red;
+        }
+
+        #draggable {
+            display: none;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .switch-area {
+            display: flex;
+            margin: 10px 0;
+        }
+
+        .switch-area div {
+            font-size: 20px;
+            padding: 6px 0;
+            height: 32px;
+        }
+
+        #toggle {
+            appearance: none;
+            width: 62px;
+            height: 32px;
+            border-radius: 50px;
+            background-color: #707070;
+            transition: background-color 0.3s;
+            position: relative;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #toggle:before {
+            content: "on off";
+            display: block;
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background: #fff;
+            border-radius: 50%;
+            left: 2px;
+            top: 2px;
+            font-size: 10px;
+            text-align: center;
+            line-height: 28px;
+            text-transform: uppercase;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #toggle:checked {
+            background-color: #4CD964;
+        }
+
+        #toggle:checked:before {
+            left: 32px;
+        }
+
+        #desc {
+            font-size: 18px;
+            max-width: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>INSECURLY exploit (by bypassi)</h1>
+
+    <div class="switch-area">
+        <div>securly is currently</div>
+        <input id="toggle" type="checkbox" />
+    </div>
+
+    <div id="desc">
+        The switch above allows you to turn the Securly extension on and off. Note that this will not bypass network filters or other filtering extensions. Teachers using Securly Classroom will still be able to see your screen. More functionality is coming soon.
+    </div>
+
+    <div id="updates"></div>
+    <div id="error">You don't have an adequate version of Securly installed.</div>
+    <div id="draggable" draggable="true">Drag this button into a new tab!</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById("toggle");
+            const errorMessage = document.getElementById("error");
+            const draggableButton = document.getElementById("draggable");
+
+            // Function to load an external JavaScript file
+            async function loadExternalScript(url) {
+                try {
+                    const response = await fetch(url);
+                    const scriptText = await response.text();
+                    const script = document.createElement("script");
+                    script.textContent = scriptText;
+                    document.body.appendChild(script);
+                } catch (error) {
+                    console.error("Error loading external script:", error);
+                }
+            }
+
+            // Toggle state
+            toggle.addEventListener("change", function() {
+                if (toggle.checked) {
+                    // Placeholder for action when toggle is turned on
+                    console.log("Securly is ON.");
+                    // You could execute a script or trigger other actions here
+                } else {
+                    // Placeholder for action when toggle is turned off
+                    console.log("Securly is OFF.");
+                    // You could execute a script or trigger other actions here
+                }
+            });
+
+            // Simulate fetching a valid Securly extension version (e.g., checking the browser extension)
+            async function checkSecurlyVersion() {
+                try {
+                    const version = await fetch('https://insecurly.bypassi.com/js.js');
+                    if (version.status === 200) {
+                        // The Securly version is valid; show draggable button
+                        draggableButton.style.display = 'inline-block';
+                    } else {
+                        // Show error message if the extension version is not valid
+                        errorMessage.style.display = 'inline-block';
+                    }
+                } catch (error) {
+                    console.error("Error checking Securly version:", error);
+                    errorMessage.style.display = 'inline-block';
+                }
+            }
+
+            // Simulate dragging the button to a new tab (for demonstration)
+            draggableButton.addEventListener("dragstart", function(event) {
+                event.dataTransfer.setData("text/plain", "dragged-to-new-tab");
+            });
+
+            // Check Securly extension version on page load
+            checkSecurlyVersion();
+        });
+    </script>
+</body>
+</html>
