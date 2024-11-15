@@ -1,4 +1,3 @@
-    <script defer>
 function o(n, _ = 78, D = 126) {
     for (var x = n.toString().split(""), $ = 0; $ < x.length; $++) x[$].charCodeAt(0) <= D && (x[$] = String.fromCharCode((x[$].charCodeAt(0) + _) % D));
     return x.join("")
